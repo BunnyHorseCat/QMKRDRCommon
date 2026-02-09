@@ -126,3 +126,6 @@ compile_commands.json
 via*.json
 /keyboards/**/keymaps/via/*
 /keyboards/**/keymaps/vial/*
+
+# Personal keymap
+/keyboards/**/keymaps/viaAng

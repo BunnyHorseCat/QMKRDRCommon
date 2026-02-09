@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../../lib/rdr_lib/rdr_common.h"
+#include "keyboard_common.h"
 
 void matrix_io_delay(void) {
 }
@@ -92,3 +92,70 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {   /*键盘只�
     return Key_Value_Dispose(keycode, record);
 }
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#if SIDE_LED_ENABLE
+    // Process side LED keycodes - returns true if handled
+    process_side_led_keycodes(keycode, record);
+#endif
+    return kb_process_record_common(keycode, record);
+}
+
+#if defined(VIA_ENABLE) && defined(SIDE_LED_ENABLE)
+// VIA custom channel IDs for Logo LED
+enum via_logo_led_value {
+    id_side_brightness = 1,
+    id_side_effect = 2,
+    id_side_effect_speed = 3,
+    id_side_color = 4,
+};
+
+void via_custom_value_command_kb(uint8_t *data, uint8_t length) {
+    uint8_t *command_id = &(data[0]);
+    uint8_t *channel_id = &(data[1]);
+    uint8_t *value_id   = &(data[2]);
+    uint8_t *value_data = &(data[3]);
+
+    // Only handle channel 1 (Side LED), let other channels pass through
+    if (*channel_id != 4) {
+        return;
+    }
+
+    if (*command_id == id_custom_set_value) {
+        switch (*value_id) {
+            case id_side_brightness:
+                Keyboard_Info.Side_Brightness = value_data[0];
+                Save_Flash_Set();
+                break;
+            case id_side_effect:
+                Keyboard_Info.Side_Mode = value_data[0];
+                Save_Flash_Set();
+                break;
+            case id_side_effect_speed:
+                Keyboard_Info.Side_Speed = value_data[0];
+                Save_Flash_Set();
+                break;
+            case id_side_color:
+                Keyboard_Info.Side_Hue = value_data[0];
+                Keyboard_Info.Side_Saturation = value_data[1];
+                Save_Flash_Set();
+                break;
+        }
+    } else if (*command_id == id_custom_get_value) {
+        switch (*value_id) {
+            case id_side_brightness:
+                value_data[0] = Keyboard_Info.Side_Brightness;
+                break;
+            case id_side_effect:
+                value_data[0] = Keyboard_Info.Side_Mode;
+                break;
+            case id_side_effect_speed:
+                value_data[0] = Keyboard_Info.Side_Speed;
+                break;
+            case id_side_color:
+                value_data[0] = Keyboard_Info.Side_Hue;
+                value_data[1] = Keyboard_Info.Side_Saturation;
+                break;
+        }
+    }
+}
+#endif

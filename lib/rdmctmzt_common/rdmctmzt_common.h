@@ -94,6 +94,19 @@ enum Custom_Keycodes {
     LOGO_SPI,  // Increase Logo LED effect speed
     LOGO_SPD,  // Decrease Logo LED effect speed
 #endif
+#if SIDE_LED_ENABLE
+    SIDE_TOG,
+    SIDE_MOD,
+    SIDE_RMOD,
+    SIDE_HUI,
+    SIDE_HUD,
+    SIDE_SAI,
+    SIDE_SAD,
+    SIDE_VAI,
+    SIDE_VAD,
+    SIDE_SPI,
+    SIDE_SPD,
+#endif
 };
 
 enum Custom_KeyModes { QMK_BLE_MODE = 0, QMK_2P4G_MODE, QMK_USB_MODE };
@@ -105,6 +118,9 @@ enum Custom_Ble_24G_Status_S { BLE_24G_NONE, BLE_24G_PIAR, BLE_24G_RETURN };
 // Logo LED feature flag - define in keyboard's config.h to enable
 #ifndef LOGO_LED_ENABLE
 #    define LOGO_LED_ENABLE 0
+#endif
+#ifndef SIDE_LED_ENABLE
+#    define SIDE_LED_ENABLE 1
 #endif
 
 typedef struct {
@@ -121,6 +137,14 @@ typedef struct {
     uint8_t Logo_Saturation; // Logo LED saturation (0-255)
     uint8_t Logo_Brightness; // Logo LED brightness (0-255)
     uint8_t Logo_Speed;      // Logo LED effect speed (0-4)
+#endif
+#if SIDE_LED_ENABLE
+    uint8_t Side_On_Off;     // Side LED on/off state
+    uint8_t Side_Mode;       // Side LED effect mode
+    uint8_t Side_Hue;        // Side LED hue (0-255)
+    uint8_t Side_Saturation; // Side LED saturation (0-255)
+    uint8_t Side_Brightness; // Side LED brightness (0-255)
+    uint8_t Side_Speed;      // Side LED effect speed (0-4)
 #endif
 } Keyboard_Info_t;
 
@@ -222,6 +246,21 @@ typedef enum {
 #    define LG_VAD LOGO_VAD
 #    define LG_SPI LOGO_SPI
 #    define LG_SPD LOGO_SPD
+#endif
+
+// Side LED shortnames (only available when SIDE_LED_ENABLE is set)
+#if LOGO_LED_ENABLE
+#    define SD_TOG SIDE_TOG
+#    define SD_MOD SIDE_MOD
+#    define SD_RMOD SIDE_RMOD
+#    define SD_HUI SIDE_HUI
+#    define SD_HUD SIDE_HUD
+#    define SD_SAI SIDE_SAI
+#    define SD_SAD SIDE_SAD
+#    define SD_VAI SIDE_VAI
+#    define SD_VAD SIDE_VAD
+#    define SD_SPI SIDE_SPI
+#    define SD_SPD SIDE_SPD
 #endif
 
 extern Keyboard_Info_t   Keyboard_Info;

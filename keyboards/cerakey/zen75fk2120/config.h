@@ -60,16 +60,12 @@
 
 #define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR  1151
 #define EEPROM_SIZE 1152
-
 #define FEE_PAGE_SIZE (0x200)
 #define FEE_PAGE_COUNT (8)
-
 #define FEE_PAGE_BASE_ADDRESS (0x1F000)
 #define FEE_MCU_FLASH_SIZE (0x1000)
-
 #define EECONFIG_USER_DATA_SIZE 4
 #define EECONFIG_KB_DATA_SIZE 1
-
 #define TRANSIENT_EEPROM_SIZE 4096
 
 #define RGB_MATRIX_LED_COUNT 94
@@ -86,11 +82,26 @@
 #define RGB_MATRIX_DEFAULT_VAL 128    // 设置 RGB 矩阵默认亮度值
 #define RGB_MATRIX_DEFAULT_SPD 128          // 设置 RGB 矩阵默认亮度值
 
-#        define RIGHT_LED_BAR_LIST \
-            { 84, 85, 86, 87, 88 }
+// BLE configuration
+#define USER_BLE_ID (0X00A5)
+#define USER_BLE1_NAME "Cerakey Zen75 1"
+#define USER_BLE2_NAME "Cerakey Zen75 2"
+#define USER_BLE3_NAME "Cerakey Zen75 3"
 
-#        define LEFT_LED_BAR_LIST \
-            { 89, 90, 91, 92, 93 }
+/* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
+#define SIDE_LED_ENABLE 1       // Enable Side LED functionality
+#define LED_SIDE_INDEX 84       // Side LED starting index (84-94 are top lightbar LEDs)
+#define SIDE_LED_COUNT 10       // Number of side/top LEDs
+//#define LED_CONNECTION_INDEX 77 // Connection type indicator (BLE/2.4G/USB)
+#define LED_CAP_INDEX 46        // Caps Lock indicator
+#define LED_WIN_L_INDEX 75      // Win Lock indicator
+#define LED_BATT_INDEX 77       // Battery status indicator
+#define LED_BLE_1_INDEX 17      // BLE 1 indicator
+#define LED_BLE_2_INDEX 18      // BLE 2 indicator
+#define LED_BLE_3_INDEX 19      // BLE 3 indicator
+#define LED_2P4G_INDEX 20       // 2.4G indicator
+#define LED_USB_INDEX 16        // USB indicator
+
 /* Backlit disable timeout when keyboard is disconnected(unit: second) */
 #        define DISCONNECTED_BACKLIGHT_DISABLE_TIMEOUT 40
 

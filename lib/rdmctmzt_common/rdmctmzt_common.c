@@ -32,6 +32,14 @@ Keyboard_Info_t Keyboard_Info = {
     .Logo_Brightness = 180, // Default brightness
     .Logo_Speed      = 2,   // Medium speed
 #endif
+#if SIDE_LED_ENABLE
+    .Side_On_Off     = 1,   // Side LED on by default
+    .Side_Mode       = 1,   // Default mode: wave animation (LOGO_MODE_WAVE)
+    .Side_Hue        = 0,   // Default hue: red
+    .Side_Saturation = 255, // Full saturation
+    .Side_Brightness = 180, // Default brightness
+    .Side_Speed      = 2,   // Medium speed
+#endif
 };
 
 Keyboard_Status_t Keyboard_Status = {.System_Work_Status = 0x00, .System_Work_Mode = 0x00, .System_Work_Channel = 0x00, .System_Connect_Status = 0x00, .System_Led_Status = 0x00, .System_Sleep_Mode = 0x00};
@@ -469,6 +477,14 @@ void Init_Keyboard_Infomation(void) {
         Keyboard_Info.Logo_Brightness = 180;
         Keyboard_Info.Logo_Speed      = 2;
 #endif
+#if SIDE_LED_ENABLE
+        Keyboard_Info.Side_On_Off     = 1;
+        Keyboard_Info.Side_Mode       = 1; // Wave animation (SIDE_MODE_WAVE)
+        Keyboard_Info.Side_Hue        = 0;
+        Keyboard_Info.Side_Saturation = 255;
+        Keyboard_Info.Side_Brightness = 180;
+        Keyboard_Info.Side_Speed      = 2;
+#endif
     } else if ((Keyboard_Info.Key_Mode == 0) && (Keyboard_Info.Ble_Channel == 0) && (Keyboard_Info.Batt_Number == 0) && (Keyboard_Info.Nkro == 0) && (Keyboard_Info.Mac_Win_Mode == 0) && (Keyboard_Info.Win_Lock == 0)) {
         Keyboard_Info.Key_Mode     = INIT_WORK_MODE;
         Keyboard_Info.Ble_Channel  = INIT_BLE_CHANNEL;
@@ -483,6 +499,14 @@ void Init_Keyboard_Infomation(void) {
         Keyboard_Info.Logo_Saturation = 255;
         Keyboard_Info.Logo_Brightness = 180;
         Keyboard_Info.Logo_Speed      = 2;
+#endif
+#if SIDE_LED_ENABLE
+        Keyboard_Info.Side_On_Off     = 1;
+        Keyboard_Info.Side_Mode       = 1; // Wave animation (SIDE_MODE_WAVE)
+        Keyboard_Info.Side_Hue        = 0;
+        Keyboard_Info.Side_Saturation = 255;
+        Keyboard_Info.Side_Brightness = 180;
+        Keyboard_Info.Side_Speed      = 2;
 #endif
     } else {
         if (Keyboard_Info.Key_Mode > QMK_USB_MODE) {
@@ -519,6 +543,19 @@ void Init_Keyboard_Infomation(void) {
         }
         if (Keyboard_Info.Logo_Speed > 4) {
             Keyboard_Info.Logo_Speed = 2;
+        }
+        // Hue, Saturation, Brightness can be any value 0-255
+#endif
+#if SIDE_LED_ENABLE
+        // Validate Side LED settings
+        if (Keyboard_Info.Side_On_Off > 1) {
+            Keyboard_Info.Side_On_Off = 1;
+        }
+        if (Keyboard_Info.Side_Mode > 9) {
+            Keyboard_Info.Side_Mode = 0;
+        }
+        if (Keyboard_Info.Side_Speed > 4) {
+            Keyboard_Info.Side_Speed = 2;
         }
         // Hue, Saturation, Brightness can be any value 0-255
 #endif
