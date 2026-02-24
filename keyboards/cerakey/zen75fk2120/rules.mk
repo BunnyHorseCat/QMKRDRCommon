@@ -1,7 +1,7 @@
 # Rules for Cerakey Zen75
 
 # Disable header guard warning for library files we can't modify
-EXTRAFLAGS += -Wno-error=header-guard
+# EXTRAFLAGS += -Wno-error=header-guard
 
 # MCU configuration
 MCU_FAMILY = ES32
@@ -48,6 +48,7 @@ SRC += rdmctmzt_common.c \
 	user_eeprom.c \
 	user_emi.c \
 	user_led_custom.c \
+	user_side_led.c \
 	user_logo_led.c \
 	user_spi.c \
 	user_system.c

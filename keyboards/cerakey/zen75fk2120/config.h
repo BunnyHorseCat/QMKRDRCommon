@@ -42,7 +42,7 @@
  * power-up.
  *
  */
-#define FORCE_NKRO
+// #define FORCE_NKRO // deprecated in favor of host.default.nkro in keyboard.json
 /*
  * Feature disable options
  * These options are also useful to firmware size reduction.
@@ -92,7 +92,7 @@
 #define SIDE_LED_ENABLE 1       // Enable Side LED functionality
 #define LED_SIDE_INDEX 84       // Side LED starting index (84-94 are top lightbar LEDs)
 #define SIDE_LED_COUNT 10       // Number of side/top LEDs
-//#define LED_CONNECTION_INDEX 77 // Connection type indicator (BLE/2.4G/USB)
+#define LED_CONNECTION_INDEX 77 // Connection type indicator (BLE/2.4G/USB)
 #define LED_CAP_INDEX 46        // Caps Lock indicator
 #define LED_WIN_L_INDEX 75      // Win Lock indicator
 #define LED_BATT_INDEX 77       // Battery status indicator

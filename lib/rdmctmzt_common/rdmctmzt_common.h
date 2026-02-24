@@ -33,6 +33,7 @@
 #include "user_emi.h"
 #include "user_led_custom.h"
 #include "user_logo_led.h"
+#include "user_side_led.h"
 #include "user_spi.h"
 #include "user_system.h"
 
