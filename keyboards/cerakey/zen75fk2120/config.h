@@ -84,9 +84,9 @@
 
 // BLE configuration
 #define USER_BLE_ID (0X50F3)
-#define USER_BLE1_NAME "Cerakey Zen75 1"
-#define USER_BLE2_NAME "Cerakey Zen75 2"
-#define USER_BLE3_NAME "Cerakey Zen75 3"
+#define USER_BLE1_NAME "CerakeyZen75 1"
+#define USER_BLE2_NAME "CerakeyZen75 2"
+#define USER_BLE3_NAME "CerakeyZen75 3"
 
 /* Battery LED count */
 #define BATTERY_LED_COUNT 10

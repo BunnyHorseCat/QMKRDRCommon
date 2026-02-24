@@ -6,18 +6,18 @@
 	"menus":
 	[
 		{
-			"label": "Lighting",
+            "label": "Lighting",
 			"content":
 			[
-				
 				{
-					"label": "RGB Effects",
+					"label": "Backlight",
 					"content":
 					[
 						{
+							"showIf": "{id_qmk_rgb_matrix_effect} != 0",
 							"label": "Brightness",
 							"type": "range",
-							"options": [0, 128],
+							"options": [0, 200],
 							"content": ["id_qmk_rgb_matrix_brightness", 3, 1]
 						},
 						{
@@ -26,7 +26,7 @@
 							"content": ["id_qmk_rgb_matrix_effect", 3, 2],
 							"options":
 							[
-								[ "All RGB Off", 0 ],
+								[ "None", 0 ],
 								[ "Solid Color", 1 ],
 								[ "Alphas Mods", 2 ],
 								[ "Gradient Up Down", 3 ],
@@ -56,23 +56,24 @@
 								[ "Hue Pendulum", 27 ],
 								[ "Hue Wave", 28 ],
 								[ "Pixel Flow", 29 ],
-								[ "Typing Heatmap", 30 ],
-								[ "Digital Rain", 31 ],
-								[ "Solid Reactive", 32 ],
-								[ "Solid Reactive Wide", 33 ],
-								[ "Solid Reactive_multiwide", 34 ],
-								[ "Solid Reactive Cross", 35 ],
-								[ "Solid Reactive Multicross", 36 ],
-								[ "Solid Reactive Nexus", 37 ],
-								[ "Solid Reactive Multinexus", 38 ],
-								[ "Splash", 39 ],
-								[ "Multisplash", 40 ],
-								[ "Solid Splash", 41 ],
-								[ "Solid Multisplash", 42 ],
-								[ "Starlight", 43 ],
-								[ "Starlight Dual Hue", 44 ],
-								[ "Starlight Dual Sat", 45 ],
-								[ "Riverflow", 46 ]
+								[ "Pixel Rain", 30 ],
+								[ "Typing Heatmap", 31 ],
+								[ "Digital Rain", 32 ],
+								[ "Solid Reactive", 33 ],
+								[ "Solid Reactive Wide", 34 ],
+								[ "Solid Reactive Multiwide", 35 ],
+								[ "Solid Reactive Cross", 36 ],
+								[ "Solid Reactive Multicross", 37 ],
+								[ "Solid Reactive Nexus", 38 ],
+								[ "Solid Reactive Multinexus", 39 ],
+								[ "Splash", 40 ],
+								[ "Multisplash", 41 ],
+								[ "Solid Splash", 42 ],
+								[ "Solid Multisplash", 43 ],
+								[ "Starlight", 44 ],
+								[ "Starlight Dual Hue", 45 ],
+								[ "Starlight Dual Sat", 46 ],
+								[ "Riverflow", 47 ]
 							]
 						},
 						{
@@ -89,11 +90,55 @@
 							"content": ["id_qmk_rgb_matrix_color", 3, 4]
 						}
 					]
+				},
+				{
+					"label": "logo",
+					"content":
+					[
+						{
+							"showIf": "{id_qmk_rgblight_effect} != 0",
+							"label": "Brightness",
+							"type": "range",
+							"options": [0, 180],
+							"content": ["id_qmk_rgblight_brightness", 2, 1]
+						},
+						{
+							"label": "Effect",
+							"type": "dropdown",
+							"content": ["id_qmk_rgblight_effect", 2, 2],
+							"options":
+							[
+								["Off", 0],
+								["Wave", 1],
+								["Wave 1", 2],
+								["Wave 2", 3],
+								["Fixed Wave", 4],
+								["Wave RGB", 5],
+								["Spectrum", 6],
+								["Breathe", 7],
+								["Breathe RGB", 8],
+								["Light", 9]
+							]
+						},
+						{
+							"showIf": "{id_qmk_rgblight_effect} != 0",
+							"label": "Effect Speed",
+							"type": "range",
+							"options": [0, 4],
+							"content": ["id_qmk_rgblight_effect_speed", 2, 3]
+						},
+						{
+							"showIf": "{id_qmk_rgblight_effect} != 0 && {id_qmk_rgblight_effect} != 1 && {id_qmk_rgblight_effect} != 3 && {id_qmk_rgblight_effect} != 6",
+							"label": "Color",
+							"type": "color",
+							"content": ["id_qmk_rgblight_color", 2, 4]
+						}
+					]
 				}
 			]
 		}
 	],
-	"customKeycodes": [
+		"customKeycodes": [
 		{"name": "2.4G",     "title": "Set to 2.4G working mode",                "shortName": "MD_24G"  },
 		{"name": "BLE1",     "title": "Set to Bluetooth Channel 1 working mode", "shortName": "MD_BLE1" },
 		{"name": "BLE2",     "title": "Set to Bluetooth Channel 2 working mode", "shortName": "MD_BLE2" },
@@ -102,28 +147,24 @@
 		{"name": "BAT",      "title": "Querying Battery Status",                 "shortName": "QK_BAT"  },
 		{"name": "WLO",      "title": "Lock WIN",                                "shortName": "QK_WLO"  },
 		{"name": "SIX_N",    "title": "Full-key six-key switch",                 "shortName": "SIX_N"   },
-        {"name": "TEST",     "title": "Test Keyboard Colour",                    "shortName": "TEST"    },
-        {"name": "KbPrSlp",  "title": "Keyboard primary sleep",                  "shortName": "KbPrSlp" },
-		{"name": "KbdSecS",  "title": "Keyboard secondary sleep",                "shortName": "KbdSecS" },
-        {"name": "IOS_SIRI", "title": "Outgoing SIRI",                           "shortName": "SIRI"    },
-        {"name": "QK_DEB",   "title": "Debounce Mode", "shortName": "QK_DEB"  },
-        {"name": "RTOG",     "title": "Toggle led lighting on or off",           "shortName": "RGB_RTOG"},
-        {"name": "LBTOG",     "title": "Toggle light bar effects on or off",           "shortName": "SD_TOG"},
-        {"name": "LBMODI",     "title": "Light bar mode increase",           "shortName": "SD_MOD"},
-        {"name": "LBMODD",     "title": "Light bar mode decrease",           "shortName": "SD_RMOD"},
-        {"name": "LBHUI",     "title": "Light bar hue increase",           "shortName": "SD_HUI"},
-        {"name": "LBHUD",     "title": "Light bar hue decrease",           "shortName": "SD_HUD"},
-        {"name": "LBSAI",     "title": "Light bar saturation increase",           "shortName": "SD_SAI"},
-        {"name": "LBSAD",     "title": "Light bar saturation decrease",           "shortName": "SD_SAD"},
-        {"name": "LBVAI",     "title": "Light bar brightness increase",           "shortName": "SD_VAI"},
-        {"name": "LBVAD",     "title": "Light bar brightness decrease",           "shortName": "SD_VAD"},
-        {"name": "LBSPI",     "title": "Light bar effect speed increase",           "shortName": "SD_SPI"},
-<<<<<<< HEAD
-        {"name": "LBSPD",     "title": "Light bar effect speed decrease",           "shortName": "SD_SPD"}
-=======
-        {"name": "LBSPD",     "title": "Light bar effect speed decrease",           "shortName": "SD_SPD"},
-        {"name": "QK_DEB",   "title": "Debounce Mode", "shortName": "QK_DEB"  }
->>>>>>> f67f6e42a5ac4e5131495b818d83c28a1bce05c3
+        {"name": "TColor",  "title": "QMK Test Color",                  "shortName": "TEST_CL" },
+		{"name": "2.4GPair",    "title": "2.4G Pairing Key",                     "shortName": "QMK_KB_2P4G_PAIR"},
+		{"name": "BLE1Pair",    "title": "Bluetooth Channel 1 Pairing Key",                     "shortName": "QMK_KB_BLE1_PAIR"},
+		{"name": "BLE2Pair",    "title": "Bluetooth Channel 2 Pairing Key",                     "shortName": "QMK_KB_BLE2_PAIR"},
+		{"name": "BLE3Pair",    "title": "Bluetooth Channel 3 Pairing Key",                     "shortName": "QMK_KB_BLE3_PAIR"},
+		{"name": "Debug",  "title": "QMK Debug Switch",                "shortName": "DBG_SW" },
+		{"name": "MacWin",    "title": "QMK Mac Win Mode Switch",                     "shortName": "MW_CH"},
+		{"name": "UGTog",   "title": "Toggle Underglow lighting on or off",          "shortName": "LG_TOG"  },
+		{"name": "UGModUp",    "title": "Cycle through modes",                     "shortName": "LG_MOD"  },
+		{"name": "UGModDwn",    "title": "Cycle through modes in reverse",          "shortName": "LG_RMOD" },
+		{"name": "UGHueI",   "title": "Underglow Increase hue",                       "shortName": "LG_HUI"  },
+		{"name": "UGHueD",   "title": "Underglow Decrease hue",                       "shortName": "LG_HUD"  },
+		{"name": "UGSatI",   "title": "Underglow Increase saturation",                "shortName": "LG_SAI"  },
+		{"name": "UGSatD",   "title": "Underglow Decrease saturation",                "shortName": "LG_SAD"  },
+		{"name": "UGBriI",   "title": "Underglow Increase brightness",        "shortName": "LG_VAI"  },
+		{"name": "UGBriD",   "title": "Underglow Decrease brightness",        "shortName": "LG_VAD"  },
+		{"name": "UGSpdI",   "title": "Underglow Increase effect speed",              "shortName": "LG_SPI"  },
+		{"name": "UGSpdD",   "title": "Underglow Decrease effect speed",              "shortName": "LG_SPD"  }
 	],
 	"matrix": { "rows": 6, "cols": 16 },
 	"layouts": {

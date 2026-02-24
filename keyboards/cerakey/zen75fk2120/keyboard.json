@@ -66,7 +66,7 @@
             "hue_wave": true,
             "pixel_fractal": false,
             "pixel_flow": true,
-            "pixel_rain": false,
+            "pixel_rain": true,
             "typing_heatmap": true,
             "digital_rain": true,
             "solid_reactive_simple": false,
