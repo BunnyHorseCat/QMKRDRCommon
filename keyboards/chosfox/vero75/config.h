@@ -92,7 +92,7 @@
 
 /* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
 #define LOGO_LED_ENABLE 1       // Enable Logo LED functionality
-#define LED_LOGO_INDEX 84       // Logo LED starting index (68-99 are logo/bottom LEDs)
+#define LED_LOGO_INDEX 84       // Logo LED starting index (84-90 are logo/bottom LEDs)
 #define LOGO_LED_COUNT 7       // Number of logo/bottom LEDs
 #define LED_CONNECTION_INDEX 83 // Connection type indicator (BLE/2.4G/USB)
 #define LED_CAP_INDEX 46        // Caps Lock indicator

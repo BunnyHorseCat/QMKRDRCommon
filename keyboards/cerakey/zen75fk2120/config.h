@@ -89,10 +89,10 @@
 #define USER_BLE3_NAME "Cerakey Zen75 3"
 
 /* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
-#define SIDE_LED_ENABLE 1       // Enable Side LED functionality
-#define LED_SIDE_INDEX 84       // Side LED starting index (84-94 are top lightbar LEDs)
-#define SIDE_LED_COUNT 10       // Number of side/top LEDs
-#define LED_CONNECTION_INDEX 77 // Connection type indicator (BLE/2.4G/USB)
+#define LOGO_LED_ENABLE 1       // Enable Logo LED functionality
+#define LED_LOGO_INDEX 84       // Logo LED starting index (84-94 are top lightbar LEDs)
+#define LOGO_LED_COUNT 10       // Number of side/top LEDs
+#define LED_CONNECTION_INDEX 83 // Connection type indicator (BLE/2.4G/USB)
 #define LED_CAP_INDEX 46        // Caps Lock indicator
 #define LED_WIN_L_INDEX 75      // Win Lock indicator
 #define LED_BATT_INDEX 77       // Battery status indicator
@@ -100,10 +100,4 @@
 #define LED_BLE_2_INDEX 18      // BLE 2 indicator
 #define LED_BLE_3_INDEX 19      // BLE 3 indicator
 #define LED_2P4G_INDEX 20       // 2.4G indicator
-#define LED_USB_INDEX 16        // USB indicator
-
-/* Backlit disable timeout when keyboard is disconnected(unit: second) */
-#        define DISCONNECTED_BACKLIGHT_DISABLE_TIMEOUT 40
-
-/* Backlit disable timeout when keyboard is connected(unit: second) */
-#        define CONNECTED_BACKLIGHT_DISABLE_TIMEOUT 600
+#define LED_USB_INDEX 21        // USB indicator
