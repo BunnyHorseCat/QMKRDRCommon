@@ -83,7 +83,7 @@
 #define RGB_MATRIX_DEFAULT_SPD 128          // 设置 RGB 矩阵默认亮度值
 
 // BLE configuration
-#define USER_BLE_ID (0X00A5)
+#define USER_BLE_ID (0X50F3)
 #define USER_BLE1_NAME "Cerakey Zen75 1"
 #define USER_BLE2_NAME "Cerakey Zen75 2"
 #define USER_BLE3_NAME "Cerakey Zen75 3"

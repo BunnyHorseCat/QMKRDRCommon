@@ -85,7 +85,7 @@
 // #define RGB_MATRIX_DEFAULT_SPD 128          // 设置 RGB 矩阵默认亮度值
 
 // BLE configuration
-#define USER_BLE_ID (0X00A5)
+#define USER_BLE_ID (0X307A)
 #define USER_BLE1_NAME "Chosfox Vero75 1"
 #define USER_BLE2_NAME "Chosfox Vero75 2"
 #define USER_BLE3_NAME "Chosfox Vero75 3"
