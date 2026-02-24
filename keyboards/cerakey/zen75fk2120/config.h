@@ -74,12 +74,12 @@
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_DISABLE_AFTER_TIMEOUT 0
 #define RGB_MATRIX_LED_FLUSH_LIMIT 16
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 128
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 160
 #define RGB_MATRIX_SLEEP
 
 #define RGB_MATRIX_SPD_STEP 16                 // 设置 RGB 矩阵速度步进值
 #define RGB_MATRIX_VAL_STEP 16                 // 设置 RGB 矩阵亮度步进值
-#define RGB_MATRIX_DEFAULT_VAL 128    // 设置 RGB 矩阵默认亮度值
+#define RGB_MATRIX_DEFAULT_VAL 160    // 设置 RGB 矩阵默认亮度值
 #define RGB_MATRIX_DEFAULT_SPD 128          // 设置 RGB 矩阵默认亮度值
 
 // BLE configuration
@@ -87,6 +87,9 @@
 #define USER_BLE1_NAME "Cerakey Zen75 1"
 #define USER_BLE2_NAME "Cerakey Zen75 2"
 #define USER_BLE3_NAME "Cerakey Zen75 3"
+
+/* Battery LED count */
+#define BATTERY_LED_COUNT 10
 
 /* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
 #define LOGO_LED_ENABLE 1       // Enable Logo LED functionality

@@ -90,6 +90,9 @@
 #define USER_BLE2_NAME "Chosfox Vero75 2"
 #define USER_BLE3_NAME "Chosfox Vero75 3"
 
+/* Battery LED count */
+#define BATTERY_LED_COUNT 10
+
 /* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
 #define LOGO_LED_ENABLE 1       // Enable Logo LED functionality
 #define LED_LOGO_INDEX 84       // Logo LED starting index (84-90 are logo/bottom LEDs)
