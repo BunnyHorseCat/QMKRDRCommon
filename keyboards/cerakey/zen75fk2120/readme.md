@@ -1,19 +1,21 @@
-# Vero75
+# Zen75
 
 A customizable 85key keyboard.
 
-![Vero75](https://raw.githubusercontent.com/Linyer-qwq/image/main/Vero84.jpg)
+
 
 * Keyboard Maintainer: [LiWenLiu](https://github.com/LiuLiuQMK)
-* Hardware Supported: Vero84 PCB with es32fs026 microcontroller
+* Hardware Supported: Zen75/FinalKey FK2120 PCB with es32fs026 microcontroller
 
 Make example for this keyboard (after setting up your build environment):
 
-    make essemi/Vero84:default
+    make cerakey/zen75fk2120:default
 
 Flashing example for this keyboard:
 
-    make essemi/Vero84:default:flash
+    make cerakey/zen75fk2120:default:flash
+
+This board uses a Mass Storage bootloader, so it will appear as a mass storage device when connected in DFU mode. Drag and drop the .bin firmware file to flash the board.
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
