@@ -93,14 +93,15 @@
   ],
   "matrix": {"rows": 10, "cols": 9},
   "customKeycodes": [
-    {"name": "IM_BATQ", "title": "IM_BATQ",  "shortName": "IM_BATQ"},
-    {"name": "KC_FILP", "title": "KC_FILP",  "shortName": "KC_FILP"},
-    {"name": "MM_BATQ", "title": "MM_BATQ",  "shortName": "MM_BATQ"},
-    {"name": "MOR_1", "title": "MOR_1",  "shortName": "MOR_1"},
-    {"name": "MOR_2", "title": "MOR_2",  "shortName": "MOR_2"},
-    {"name": "MOR_3", "title": "MOR_3",  "shortName": "MOR_3"},
-    {"name": "MOR_4", "title": "MOR_4",  "shortName": "MOR_4"},
-    {"name": "RL_MOD", "title": "RL_MOD",  "shortName": "RL_MOD"}
+    {"name": "KC_BT1",  "title": "Bluetooth 1",              "shortName": "BT1"},
+    {"name": "KC_BT2",  "title": "Bluetooth 2",              "shortName": "BT2"},
+    {"name": "KC_BT3",  "title": "Bluetooth 3",              "shortName": "BT3"},
+    {"name": "KC_2G4",  "title": "2.4GHz Dongle",            "shortName": "2.4G"},
+    {"name": "RL_MOD",  "title": "RGB Light Mode",           "shortName": "RLMOD"},
+    {"name": "HS_BATQ", "title": "Battery Query (hold)",     "shortName": "BATQ"},
+    {"name": "KC_FILP", "title": "Fn Media Flip Toggle",     "shortName": "FLIP"},
+    {"name": "KC_BATQ", "title": "Battery/Charge Indicator", "shortName": "BAT"},
+    {"name": "KC_USB",  "title": "USB / Wired Mode",         "shortName": "USB"}
   ],
   "layouts": {
       "keymap":

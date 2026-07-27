@@ -143,6 +143,17 @@ void eeconfig_confinfo_init(void) {
     }
 }
 
+// Master detection for this wireless split. The default QMK logic picks the
+// master by USB-host presence, which is fine when cabled but leaves BOTH halves
+// as slave in wireless/dongle mode (no USB host) -> nothing works wirelessly.
+// So: if a USB cable is inserted, this half is master; otherwise fall back to
+// the handedness pin so the left half drives the wireless module.
+bool is_keyboard_master(void) {
+    if (gpio_read_pin(HS_BAT_CABLE_PIN)) return true;
+    gpio_set_pin_input(SPLIT_HAND_PIN);
+    return gpio_read_pin(SPLIT_HAND_PIN);
+}
+
 void keyboard_post_init_kb(void) {
 #ifdef CONSOLE_ENABLE
     debug_enable = true;
@@ -298,7 +309,25 @@ void suspend_power_down_user(void) {
 
 bool lpwr_is_allow_timeout_hook(void) {
 
-    if (wireless_get_current_devs() == DEVS_USB && is_keyboard_master()) {
+    // In wired/USB mode neither half may enter low-power sleep. The check must
+    // NOT be gated on is_keyboard_master(): the slave (right half) is not the
+    // USB host, so a master-only guard lets it time out on its own after
+    // ~5 min of no local keypress. On such an uncoordinated sleep it arms only
+    // the cable-insert wake source, so key presses can't wake it and the half
+    // appears frozen until unplugged/replugged. Gating on devs alone keeps the
+    // slave awake whenever the keyboard is running over the cable.
+    if (wireless_get_current_devs() == DEVS_USB) {
+        return false;
+    }
+
+    // Wireless: only the master runs the idle-timeout. QMK's split activity sync
+    // is slave->master, so the master's inactivity timer reflects the WHOLE
+    // keyboard, but the slave's local timer never sees master keypresses. If the
+    // slave were allowed to time out on its own it would sleep while you type on
+    // the left half, leaving the right half unresponsive until a right-side key
+    // (matrix wake) or a replug. So the slave sleeps only when the master
+    // coordinates it via the 0xAA RPC, which sets manual_timeout on the slave.
+    if (!is_keyboard_master() && !lpwr_get_timeout_manual()) {
         return false;
     }
 
@@ -448,6 +477,14 @@ bool process_record_wls(uint16_t keycode, keyrecord_t *record) {
             hs_modeio_detection(true, &mode, confinfo.last_btdevs);
             if ((mode == hs_2g4) || (mode == hs_wireless) || (mode == hs_none)) {
                 WLS_KEYCODE_EXEC(DEVS_2G4);
+                hs_rgb_blink_set_timer(timer_read32());
+            }
+        } break;
+        case KC_USB: {
+            uint8_t mode = confinfo.devs;
+            hs_modeio_detection(true, &mode, confinfo.last_btdevs);
+            if ((mode == hs_usb) || (mode == hs_wireless) || (mode == hs_none)) {
+                WLS_KEYCODE_EXEC(DEVS_USB);
                 hs_rgb_blink_set_timer(timer_read32());
             }
         } break;
