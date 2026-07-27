@@ -33,17 +33,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     // Layer 2: Mac Fn
     [2] = LAYOUT_tkl_ansi(
-        MD_USB,  MD_BLE1, MD_BLE2, MD_BLE3, MD_24G,  RGB_MOD, TO(1),   TO(0),   KC_LBRC, KC_RBRC, KC_BSLS, RGB_TOG,
+        MD_USB,  MD_BLE1, MD_BLE2, MD_BLE3, MD_24G,  RM_NEXT, TO(1),   TO(0),   KC_LBRC, KC_RBRC, KC_BSLS, RM_TOGG,
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        KC_LSFT, KC_INS,  KC_DEL,  KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_M,    KC_COMM, KC_DOT,  RGB_VAI, MW_CH,
-        KC_NO,   DBG_SW,  QK_BAT,  KC_NO,   KC_LGUI,          EE_CLR,KC_RGUI, KC_EQL,  RGB_SPD, RGB_VAD, RGB_SPI
+        KC_LSFT, KC_INS,  KC_DEL,  KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_M,    KC_COMM, KC_DOT,  RM_VALU, MW_CH,
+        KC_NO,   DBG_SW,  QK_BAT,  KC_NO,   KC_LGUI,          EE_CLR,KC_RGUI, KC_EQL,  RM_SPDD, RM_VALD, RM_SPDU
     ),
     // Layer 3: Win Fn
     [3] = LAYOUT_tkl_ansi(
-        MD_USB,  MD_BLE1, MD_BLE2, MD_BLE3, MD_24G,  RGB_MOD, TO(1),   TO(0),   KC_LBRC, KC_RBRC, KC_BSLS, RGB_TOG,
+        MD_USB,  MD_BLE1, MD_BLE2, MD_BLE3, MD_24G,  RM_NEXT, TO(1),   TO(0),   KC_LBRC, KC_RBRC, KC_BSLS, RM_TOGG,
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        KC_LSFT, KC_INS,  KC_DEL,  KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_M,    KC_COMM, KC_DOT,  RGB_VAI, MW_CH,
-        KC_NO,   DBG_SW,  QK_BAT,  KC_NO,   KC_LALT,          EE_CLR,KC_RGUI, KC_EQL,  RGB_SPD, RGB_VAD, RGB_SPI
+        KC_LSFT, KC_INS,  KC_DEL,  KC_HOME, KC_END,  KC_PGUP, KC_PGDN, KC_M,    KC_COMM, KC_DOT,  RM_VALU, MW_CH,
+        KC_NO,   DBG_SW,  QK_BAT,  KC_NO,   KC_LALT,          EE_CLR,KC_RGUI, KC_EQL,  RM_SPDD, RM_VALD, RM_SPDU
     ),
     // Layer 4: Blank (customizable)
     [4] = LAYOUT_tkl_ansi(
