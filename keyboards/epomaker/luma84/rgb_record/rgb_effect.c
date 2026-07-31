@@ -169,7 +169,7 @@ __attribute__((weak)) void rgblight_effect_breathing(animation_status_t *anim) {
         default:
             break;
     }
-    for (uint8_t j = 0; j < RGBLED_NUM; j++)
+    for (uint8_t j = 0; j < RGBLIGHT_LED_COUNT; j++)
         rgblight_setrgb_at(r, g, b, j);
 }
 
@@ -177,7 +177,7 @@ __attribute__((weak)) void rgblight_effect_rainbow_mood(animation_status_t *anim
     static uint8_t i = 0, r = rainbow_mood, g = 0, b = 0;
 
     if (rgblight_config.enable) {
-        for (uint8_t j = 0; j < RGBLED_NUM; j++)
+        for (uint8_t j = 0; j < RGBLIGHT_LED_COUNT; j++)
             rgblight_setrgb_at(r, g, b, j);
 
         if (i == 0) {

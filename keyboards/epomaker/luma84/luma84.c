@@ -57,13 +57,13 @@ void matrix_init_user(void);
 
 uint32_t        post_init_timer       = 0x00;
 bool            inqbat_flag           = false;
-bool            charging_state        = false;
+extern bool     charging_state;
 bool            bat_full_flag         = false;
 static uint32_t ee_clr_timer          = 0;
 bool            test_white_light_flag = false;
 HSV             start_hsv;
 bool            no_record_fg;
-bool            lower_sleep = false;
+extern bool     lower_sleep;
 bool            hs_color_test;
 bool            hs_frequency_test;
 bool            Mode_Query      = false;
@@ -376,7 +376,7 @@ void eeconfig_confinfo_default(void) {
 
 #if defined(NKRO_ENABLE) && defined(FORCE_NKRO)
     keymap_config.nkro = 1;
-    eeconfig_update_keymap(keymap_config.raw);
+    eeconfig_update_keymap(&keymap_config);
 #endif
 
 #ifdef RGBLIGHT_ENABLE
@@ -539,8 +539,8 @@ void wireless_post_task(void) {
 
     hs_mode_scan(false, confinfo.devs, confinfo.last_btdevs);
 }
-bool     state = false;
-uint32_t wls_process_long_press(uint32_t trigger_time, void *cb_arg) {
+extern bool state;
+uint32_t    wls_process_long_press(uint32_t trigger_time, void *cb_arg) {
     uint16_t keycode = *((uint16_t *)cb_arg);
 
     switch (keycode) {
@@ -1517,7 +1517,7 @@ void hs_reset_settings(void) {
     rgblight_enable();
 #endif
 
-    keymap_config.raw = eeconfig_read_keymap();
+    eeconfig_read_keymap(&keymap_config);
 
 #if defined(WIRELESS_ENABLE)
     wireless_devs_change(wireless_get_current_devs(), DEVS_USB, false);
