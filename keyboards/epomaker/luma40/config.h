@@ -36,8 +36,8 @@
 #    define NOP_FUDGE 0.4
 #endif
 
-#define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 1151
-#define EEPROM_SIZE 1152
+// Shared EEPROM sizing + layer count for all Epomaker FS026 boards
+#include "fs026_eeprom.h"
 #define FEE_PAGE_SIZE (0x200)
 #define FEE_PAGE_COUNT (8)
 #define FEE_PAGE_BASE_ADDRESS (0x1F000)

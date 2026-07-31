@@ -9,7 +9,7 @@
     "debounce": 2,
     "diode_direction": "ROW2COL",
     "dynamic_keymap": {
-        "layer_count": 5
+        "layer_count": 8
     },
     "eeprom": {
         "driver": "wear_leveling",

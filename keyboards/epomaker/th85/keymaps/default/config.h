@@ -16,18 +16,5 @@
 
 #pragma once
 
-#define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR  1151
-#define EEPROM_SIZE 1152
-
-#define FEE_PAGE_SIZE (0x200)
-#define FEE_PAGE_COUNT (8)
-
-#define FEE_PAGE_BASE_ADDRESS (0x1F000)
-#define FEE_MCU_FLASH_SIZE (0x1000)
-
-#define EECONFIG_USER_DATA_SIZE 4
-
-#define EECONFIG_KB_DATA_SIZE 1
-
-#define TRANSIENT_EEPROM_SIZE 4096
-
+// EEPROM sizing + layer count come from the shared header included by
+// keyboards/epomaker/th85/config.h (lib/rdmctmzt_common/fs026_eeprom.h).
