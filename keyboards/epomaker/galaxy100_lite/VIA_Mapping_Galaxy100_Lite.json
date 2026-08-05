@@ -95,15 +95,15 @@
                                     14
                                 ],
                                 [
-                                    "cycle_out_in",
+                                    "rainbow_moving_chevron",
                                     15
                                 ],
                                 [
-                                    "cycle_out_in_dual",
+                                    "cycle_out_in",
                                     16
                                 ],
                                 [
-                                    "rainbow_moving_chevron",
+                                    "cycle_out_in_dual",
                                     17
                                 ],
                                 [
@@ -151,88 +151,72 @@
                                     28
                                 ],
                                 [
-                                    "pixel_fractal",
+                                    "pixel_flow",
                                     29
                                 ],
                                 [
-                                    "pixel_flow",
+                                    "digital_rain",
                                     30
                                 ],
                                 [
-                                    "pixel_rain",
+                                    "solid_reactive",
                                     31
                                 ],
                                 [
-                                    "typing_heatmap",
+                                    "solid_reactive_wide",
                                     32
                                 ],
                                 [
-                                    "digital_rain",
+                                    "solid_reactive_multiwide",
                                     33
                                 ],
                                 [
-                                    "solid_reactive",
+                                    "solid_reactive_cross",
                                     34
                                 ],
                                 [
-                                    "solid_reactive_wide",
+                                    "solid_reactive_multicross",
                                     35
                                 ],
                                 [
-                                    "solid_reactive_multiwide",
+                                    "solid_reactive_nexus",
                                     36
                                 ],
                                 [
-                                    "solid_reactive_cross",
+                                    "solid_reactive_multinexus",
                                     37
                                 ],
                                 [
-                                    "solid_reactive_multicross",
+                                    "splash",
                                     38
                                 ],
                                 [
-                                    "solid_reactive_nexus",
+                                    "multisplash",
                                     39
                                 ],
                                 [
-                                    "solid_reactive_multinexus",
+                                    "solid_splash",
                                     40
                                 ],
                                 [
-                                    "splash",
+                                    "solid_multisplash",
                                     41
                                 ],
                                 [
-                                    "multisplash",
+                                    "starlight",
                                     42
                                 ],
                                 [
-                                    "solid_splash",
+                                    "starlight_dual_sat",
                                     43
                                 ],
                                 [
-                                    "solid_multisplash",
+                                    "starlight_dual_hue",
                                     44
                                 ],
                                 [
-                                    "starlight",
-                                    45
-                                ],
-                                [
-                                    "starlight_smooth",
-                                    46
-                                ],
-                                [
-                                    "starlight_dual_hue",
-                                    47
-                                ],
-                                [
-                                    "starlight_dual_sat",
-                                    48
-                                ],
-                                [
                                     "riverflow",
-                                    49
+                                    45
                                 ]
                             ]
                         },
@@ -458,16 +442,10 @@
                 },
                 "5,7",
                 {
-                    "w": 1.0,
-                    "h": 1.0,
-                    "x": 0.0
-                },
-                "5,8",
-                {
                     "c": "#777777",
                     "w": 1.0,
                     "h": 1.0,
-                    "x": 0.25,
+                    "x": 0.0,
                     "fa": [
                         1,
                         0,

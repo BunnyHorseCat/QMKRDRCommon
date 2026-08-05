@@ -33,21 +33,21 @@
 #    define NOP_FUDGE 0.4
 #endif
 
-// Shared EEPROM sizing + layer count for all Epomaker FS026 boards.
-// This board overrides the defaults: its 7x16 matrix costs 224 bytes per VIA
-// layer, so 8 layers alone eat 1792 of the shared 1983-byte budget and leave
-// almost nothing for macros (the stock firmware, with 4 layers, offered 194
-// bytes). Growing the budget to 3072 gives ~1.1 KB of macro storage:
+// Shared EEPROM sizing for all Epomaker FS026 boards (2048 bytes / max addr
+// 1983). This board keeps that budget deliberately: EEPROM_SIZE drives both the
+// .bss shadow copy and the length of the wear-levelling page transfer in
+// user_eeprom.c, and a page transfer runs with the CPU busy rewriting flash, so
+// enlarging it lengthens the window in which USB reports and matrix scans stall.
 //
-//     dynamic keymap start (eeconfig + VIA config) :   46
-//     8 layers * 7 * 16 * 2 bytes                  : 1792  -> ends at 1838
-//     8 layers * 1 encoder * 2 * 2 bytes           :   32  -> ends at 1870
-//     macro region (up to DYNAMIC_KEYMAP_EEPROM_MAX_ADDR) : 1138
+// The 7x16 matrix costs 224 bytes per VIA layer, so the layer count is what has
+// to give here. Six layers still leaves nearly 3x the macro space the stock
+// firmware offered (194 bytes):
 //
-// The cost is RAM: user_eeprom.c shadows the whole EEPROM in .bss, so this adds
-// 1 KB to a 16 KB budget. Measured headroom after the bump is ~900 bytes.
-#define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 3007
-#define EEPROM_SIZE 3072
+//     dynamic keymap start (eeconfig + VIA config)        :   46
+//     6 layers * 7 * 16 * 2 bytes                         : 1344  -> ends at 1390
+//     6 layers * 1 encoder * 2 * 2 bytes                  :   24  -> ends at 1414
+//     macro region (up to DYNAMIC_KEYMAP_EEPROM_MAX_ADDR) :  570
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 #include "fs026_eeprom.h"
 #define FEE_PAGE_SIZE (0x200)
 #define FEE_PAGE_COUNT (8)

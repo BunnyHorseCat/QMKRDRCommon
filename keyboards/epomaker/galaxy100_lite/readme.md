@@ -28,26 +28,37 @@ VIA is enabled in the default keymap. Load
 [`VIA_Mapping_Galaxy100_Lite.json`](VIA_Mapping_Galaxy100_Lite.json) as a design
 file in VIA (Settings -> Show Design tab -> Design -> Load). The vendor's original
 file is kept alongside it as `Epomaker Galaxy100 Lite.JSON` for reference; the
-maintained one fixes the RGB effect indices (the vendor list had
-`rainbow_moving_chevron` and the two `starlight` variants in the wrong order) and
-the custom keycode list, and matches the brightness cap actually built into the
-firmware.
+maintained one carries the custom keycode list and a brightness range that
+matches the cap built into the firmware.
+
+The effect dropdown is generated from the effect order the firmware actually
+compiles (the enabled entries of `rgb_matrix.animations` in `keyboard.json`, in
+`quantum/rgb_matrix/animations/rgb_matrix_effects.inc` order). If you change that
+animation list, the dropdown has to be regenerated or VIA will select the wrong
+effect.
 
 ## Layout notes
 
-`LAYOUT_1800_ansi` has 102 positions: 100 keys, the knob switch on `(5, 8)`, and
-`(5, 3)`, which is the slot the vendor's VIA file attaches the encoder widget to.
-Both carry `KC_MUTE` in the default keymap so the knob mutes regardless of which
-of the two the push actually scans on. The vendor's own VIA file omits `(5, 8)`
-entirely — that is a bug in it, and the maintained mapping here restores the key.
+`LAYOUT_1800_ansi` has 101 positions: 100 keys plus the knob press on `(5, 3)`.
+To the right of the F-row there are only three keys — Home, End and PrtSc — and
+then the knob.
 
-LED 17 is wired to `(5, 8)`; the encoder slot `(5, 3)` has no LED.
+The vendor's `info.json` also lists `(5, 8)`, stacked at the same coordinate as
+the knob. There is no switch there; the slot only exists because LED 17 is wired
+to it. It is left out of the layout, as it is in the vendor's own VIA file.
 
 ## Macro storage
 
-The stock firmware only left 194 bytes for VIA macros. This build raises the
-emulated-EEPROM budget (see the comment in `config.h`) to **1138 bytes** while
-keeping 8 dynamic keymap layers.
+The stock firmware left 194 bytes for VIA macros. This build gets that to **570
+bytes** by keeping the shared 2048-byte EEPROM budget and spending the extra room
+on macros rather than layers: the 7x16 matrix costs 224 bytes per VIA layer, so
+this board is configured for 6 dynamic keymap layers instead of the 8 the other
+FS026 boards use.
+
+Enlarging `EEPROM_SIZE` instead would buy more macro space, but it lengthens the
+wear-levelling page transfer in `user_eeprom.c`, which runs with the CPU tied up
+rewriting flash — that stalls USB reports and matrix scanning, so it is not a
+free trade.
 
 ## Bootloader
 
