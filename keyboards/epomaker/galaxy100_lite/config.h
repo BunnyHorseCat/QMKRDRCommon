@@ -30,7 +30,7 @@
 #define EARLY_INIT_PERFORM_BOOTLOADER_JUMP TRUE
 
 #ifndef NOP_FUDGE
-#    define NOP_FUDGE 0.4
+#define NOP_FUDGE 0.4
 #endif
 
 // Shared EEPROM sizing for all Epomaker FS026 boards (2048 bytes / max addr
@@ -64,6 +64,7 @@
 #define RGB_DISABLE_AFTER_TIMEOUT 0
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
 #define RGB_MATRIX_SLEEP
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_RIVERFLOW
 
 // BLE configuration for Galaxy100 Lite
 #define USER_BLE_ID (0X0100) // Galaxy100 Lite BLE ID
@@ -72,14 +73,14 @@
 #define USER_BLE3_NAME "Galaxy100Lite-3"
 
 /* LED Index Definitions required by lib/rdmctmzt_common/keyboard_common.h */
-#define LED_CAP_INDEX 56        // Caps Lock indicator (Caps key)
-#define LED_WIN_L_INDEX 90      // Win Lock indicator (left GUI key)
-#define LED_BATT_INDEX 19       // Low battery warning (number row '1' key)
-#define LED_BLE_1_INDEX 38      // 'Q' key position for BLE 1
-#define LED_BLE_2_INDEX 39      // 'W' key position for BLE 2
-#define LED_BLE_3_INDEX 40      // 'E' key position for BLE 3
-#define LED_2P4G_INDEX 41       // 'R' key position for 2.4G
-#define LED_USB_INDEX 42        // 'T' key position for USB
+#define LED_CAP_INDEX 56   // Caps Lock indicator (Caps key)
+#define LED_WIN_L_INDEX 90 // Win Lock indicator (left GUI key)
+#define LED_BATT_INDEX 19  // Low battery warning (number row '1' key)
+#define LED_BLE_1_INDEX 38 // 'Q' key position for BLE 1
+#define LED_BLE_2_INDEX 39 // 'W' key position for BLE 2
+#define LED_BLE_3_INDEX 40 // 'E' key position for BLE 3
+#define LED_2P4G_INDEX 41  // 'R' key position for 2.4G
+#define LED_USB_INDEX 42   // 'T' key position for USB
 // Only used when LED_CONNECTION_INDICATOR_ENABLE is turned on. LED 17 sits on
 // the unpopulated (5,8) matrix slot next to the knob, so it never doubles as a
 // key backlight.
