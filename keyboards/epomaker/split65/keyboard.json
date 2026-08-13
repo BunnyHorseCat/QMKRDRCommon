@@ -10,12 +10,12 @@
     "debounce": 1,
     "diode_direction": "ROW2COL",
     "dynamic_keymap": {
-        "layer_count": 4
+        "layer_count": 8
     },
     "eeprom": {
         "driver": "wear_leveling",
         "wear_leveling": {
-            "backing_size": 4096,
+            "backing_size": 8192,
             "driver": "spi_flash"
         }
     },

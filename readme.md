@@ -6,7 +6,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
 [![GitHub forks](https://img.shields.io/github/forks/qmk/qmk_firmware.svg?style=social&label=Fork)](https://github.com/qmk/qmk_firmware/)
 
-This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
+This is a keyboard firmware based on the [tmk_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
 
 ## 🚨 Forked firmware remarks
 
@@ -24,11 +24,14 @@ They keyboards that have been incorporated are:
 - Evoworks EVO80
 - Epomaker Galaxy68
 - Chosfox Geonix R2
+- Chosfox Geonix R2.5 40/41 keys
 - Cidoo QK61 v2
 - Chosfox Vero75
 - Cerakey Zen75
 - Epomaker TH85
 - Epomaker Split 65
+- Epomaker Split 70
+- Epomaker Galaxy 100 Lite
 
 These are keyboards I own or have been tested and reported back to work. There might be differences to the official firmware in keymaps, sleep times, battery consumption and other factors but the main features should work as the original (wireless, LEDs, etc).
 
@@ -38,18 +41,19 @@ These are keyboards I own or have been tested and reported back to work. There m
 - Epomaker Tide65
 - Epomaker Tide75
 - ~Epomaker Galaxy100 (Removed on baf8d85bb9 due to issues)~
+- Epomaker Galaxy100 Lite
 - Epomaker Luma84
 - Epomaker Tide49
 
 These untested keyboards compile but haven't been tested for all it's functionality so wireless, backlights, RGB or other functions might not work as expected or as the official firmware.
 
-There are factory firmware files for some of these keyboards at https://github.com/carlosedp/qmk_firmware/releases/tag/0.31.2. Use them in case you need to revert to the original.
+There are factory firmware files for some of these keyboards at <https://github.com/carlosedp/qmk_firmware/releases/tag/0.31.2>. Use them in case you need to revert to the original.
 
 I welcome testers and PRs to have a broad open-source support of them.
 
 ## Documentation
 
-* [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
+- [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
 
 The docs are powered by [VitePress](https://vitepress.dev/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
 
@@ -57,12 +61,12 @@ You can request changes by making a fork and opening a [pull request](https://gi
 
 ## Supported Keyboards
 
-* [Planck](/keyboards/planck/)
-* [Preonic](/keyboards/preonic/)
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Clueboard](/keyboards/clueboard/)
-* [Cluepad](/keyboards/clueboard/17/)
-* [Atreus](/keyboards/atreus/)
+- [Planck](/keyboards/planck/)
+- [Preonic](/keyboards/preonic/)
+- [ErgoDox EZ](/keyboards/ergodox_ez/)
+- [Clueboard](/keyboards/clueboard/)
+- [Cluepad](/keyboards/clueboard/17/)
+- [Atreus](/keyboards/atreus/)
 
 The project also includes community support for [lots of other keyboards](/keyboards/).
 

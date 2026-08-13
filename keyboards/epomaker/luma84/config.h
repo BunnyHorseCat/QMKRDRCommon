@@ -98,12 +98,8 @@
 #define RGB_TRIGGER_ON_KEYDOWN
 
 /* RGB Light */
-#define RGBLED_NUM 4
 #define RGBLIGHT_CUSTOM_DRIVER
 #define RGBLIGHT_DISABLE_KEYCODES
-
-/* Number of RGBLIGHT LEDs (used by WS2812 driver) */
-#define RGBLIGHT_LED_COUNT RGBLED_NUM
 
 #define breathing_val 90
 #define rainbow_mood 90

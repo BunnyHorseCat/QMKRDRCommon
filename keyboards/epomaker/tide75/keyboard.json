@@ -11,7 +11,7 @@
     "eeprom": {
         "driver": "wear_leveling",
         "wear_leveling": {
-            "backing_size": 4096,
+            "backing_size": 8192,
             "driver": "spi_flash"
         }
     },
@@ -68,7 +68,7 @@
         }
     ],
     "dynamic_keymap": {
-        "layer_count": 5
+        "layer_count": 8
     },
     "matrix_pins": {
         "cols": [

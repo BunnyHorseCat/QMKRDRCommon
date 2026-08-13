@@ -1,7 +1,7 @@
 #include "rgb_rgblight.h"
 #include "rgblight.h"
 
-LED_TYPE                 led[RGBLED_NUM];
+LED_TYPE                 led[RGBLIGHT_LED_COUNT];
 extern rgblight_config_t rgblight_config;
 const uint8_t            led_map[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
 
@@ -23,8 +23,8 @@ __attribute__((weak)) void rgblight_set(void) {
             led[i].b = 0;
         }
     }
-    LED_TYPE led0[RGBLED_NUM];
-    for (uint8_t i = 0; i < RGBLED_NUM; i++) {
+    LED_TYPE led0[RGBLIGHT_LED_COUNT];
+    for (uint8_t i = 0; i < RGBLIGHT_LED_COUNT; i++) {
         led0[i] = led[pgm_read_byte(&led_map[i])];
     }
     start_led = led0 + rgblight_ranges.clipping_start_pos;
@@ -32,7 +32,7 @@ __attribute__((weak)) void rgblight_set(void) {
 }
 
 __attribute__((weak)) bool rgb_matrix_indicators_advanced_rgblight(uint8_t led_min, uint8_t led_max) {
-    for (uint8_t i = 0; i < RGBLED_NUM; i++) {
+    for (uint8_t i = 0; i < RGBLIGHT_LED_COUNT; i++) {
         rgb_matrix_set_color(i, led[i].r, led[i].g, led[i].b); // rgb light
     }
 
