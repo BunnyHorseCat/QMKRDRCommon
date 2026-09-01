@@ -50,10 +50,10 @@
 #define RGB_MATRIX_VAL_STEP   16                 // 设置 RGB 矩阵亮度步进值
 
 // BLE configuration for GEONIX REV.2.5 OSS port
-#define USER_BLE_ID (0X0118)
-#define USER_BLE1_NAME "Geonix R2.5-1"
-#define USER_BLE2_NAME "Geonix R2.5-2"
-#define USER_BLE3_NAME "Geonix R2.5-3"
+#define USER_BLE_ID (0X0116)
+#define USER_BLE1_NAME "Geonix R2.5 1"
+#define USER_BLE2_NAME "Geonix R2.5 2"
+#define USER_BLE3_NAME "Geonix R2.5 3"
 
 /* Battery LED count */
 #define BATTERY_LED_COUNT 10

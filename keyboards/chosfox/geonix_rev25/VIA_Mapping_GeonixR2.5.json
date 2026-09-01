@@ -120,7 +120,11 @@
             "title": "Querying Battery Status",
             "shortName": "QK_BAT"
         },
-        { "name": "WLO", "title": "Lock WIN", "shortName": "QK_WLO" },
+        {
+            "name": "WLO",
+            "title": "Lock WIN",
+            "shortName": "QK_WLO"
+        },
         {
             "name": "SIX_N",
             "title": "Full-key six-key switch",
@@ -130,6 +134,31 @@
             "name": "TEST",
             "title": "Test led lighting",
             "shortName": "RGB_TEST"
+        },
+	{
+           "name": "2.4GPair",
+           "title": "2.4G Pairing Key",
+           "shortName": "QMK_KB_2P4G_PAIR"
+        },
+	{
+           "name": "BLE1Pair",
+           "title": "Bluetooth Channel 1 Pairing Key",
+           "shortName": "QMK_KB_BLE1_PAIR"
+        },
+	{
+           "name": "BLE2Pair",
+           "title": "Bluetooth Channel 2 Pairing Key",
+           "shortName": "QMK_KB_BLE2_PAIR"
+        },
+	{
+           "name": "BLE3Pair",
+           "title": "Bluetooth Channel 3 Pairing Key",
+           "shortName": "QMK_KB_BLE3_PAIR"
+        },
+	{
+           "name": "MacWin",
+           "title": "QMK Mac Win Mode Switch",
+           "shortName": "MW_CH"
         },
         {
             "name": "PAIR",
