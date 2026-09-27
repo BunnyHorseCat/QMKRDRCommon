@@ -40,8 +40,6 @@ BLUETOOTH_CUSTOM = yes
 # Silence header-guard mismatch warnings from upstream CMSIS headers (not editable here).
 # Treat header-guard warning as non-fatal so it doesn't stop the build.
 
-ENCODER_MAP_ENABLE = yes
-
 # RGB Matrix is configured in keyboard.json with custom driver
 # The driver implementation is in user_led_custom.c
 # Explicitly define RGB_MATRIX_ENABLE for VIA compatibility

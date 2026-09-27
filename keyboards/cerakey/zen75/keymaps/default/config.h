@@ -19,3 +19,5 @@
 // Enable VIA's built-in QMK RGB Matrix Lighting feature (Channel 4)
 // The keyboard uses QMK's standard RGB Matrix state tracking with a custom output driver
 #define VIA_QMK_RGB_MATRIX_ENABLE 1
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
